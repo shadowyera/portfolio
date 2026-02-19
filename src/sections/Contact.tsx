@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32">
+    <section id="contact" className="relative py-32">
       <div className="max-w-6xl mx-auto px-6">
 
         <motion.div
@@ -16,20 +16,37 @@ export default function Contact() {
             Contacto
           </h2>
 
-          <p className="mt-4 text-muted-foreground">
-            ¿Te interesa trabajar conmigo o tienes un proyecto en mente?
-            Escríbeme y conversemos.
+          <div className="mt-3 h-px w-24 bg-linear-to-r from-primary/60 to-transparent" />
+
+          <p className="mt-6 text-muted-foreground max-w-xl">
+            Si te interesa conversar sobre una oportunidad laboral,
+            colaboración o simplemente intercambiar ideas sobre desarrollo,
+            puedes contactarme directamente.
           </p>
 
-          <div className="mt-10 space-y-4">
+          {/* Card */}
+          <div className="
+            mt-10
+            rounded-2xl
+            border border-white/10
+            bg-linear-to-b from-white/5 to-white/2
+            p-8
+            space-y-6
+          ">
 
-            <div className="flex items-center gap-3">
-              <span className="text-muted-foreground">Nombre:</span>
-              <span className="font-medium">Matías Vallejos Hidalgo</span>
+            <div className="flex justify-between items-center">
+              <span className="text-muted-foreground text-sm">
+                Nombre
+              </span>
+              <span className="font-medium">
+                Matías Vallejos Hidalgo
+              </span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-muted-foreground">Email:</span>
+            <div className="flex justify-between items-center">
+              <span className="text-muted-foreground text-sm">
+                Email
+              </span>
               <a
                 href="mailto:maatiasf97@gmail.com"
                 className="text-primary hover:underline"
@@ -38,8 +55,10 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-muted-foreground">GitHub:</span>
+            <div className="flex justify-between items-center">
+              <span className="text-muted-foreground text-sm">
+                GitHub
+              </span>
               <a
                 href="https://github.com/shadowyera"
                 target="_blank"
@@ -50,8 +69,10 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-muted-foreground">LinkedIn:</span>
+            <div className="flex justify-between items-center">
+              <span className="text-muted-foreground text-sm">
+                LinkedIn
+              </span>
               <a
                 href="https://linkedin.com/in/mfvallejos/"
                 target="_blank"
@@ -63,6 +84,11 @@ export default function Contact() {
             </div>
 
           </div>
+
+          <p className="mt-8 text-sm text-muted-foreground">
+            Actualmente abierto a nuevas oportunidades en desarrollo
+            frontend, backend o full stack.
+          </p>
 
         </motion.div>
 
