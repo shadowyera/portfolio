@@ -1,94 +1,122 @@
 import { motion } from "framer-motion"
+import { FiMail, FiGithub, FiLinkedin, FiUser } from "react-icons/fi"
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-32">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="contact" className="relative py-32 overflow-hidden">
+
+      {/* Background glow */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-primary/5 blur-[160px]" />
+
+      <div className="relative max-w-6xl mx-auto px-6">
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-4xl font-bold">
+
+          {/* Heading */}
+          <h2 className="text-4xl md:text-5xl font-bold">
             Contacto
           </h2>
 
-          <div className="mt-3 h-px w-24 bg-linear-to-r from-primary/60 to-transparent" />
+          <div className="mx-auto mt-4 h-0.5 w-24 bg-primary/40 rounded-full" />
 
-          <p className="mt-6 text-muted-foreground max-w-xl">
-            Si te interesa conversar sobre una oportunidad laboral,
-            colaboración o simplemente intercambiar ideas sobre desarrollo,
-            puedes contactarme directamente.
+          <p className="mt-6 text-muted-foreground max-w-xl mx-auto">
+            ¿Te interesa trabajar conmigo o tienes un proyecto en mente?
+            Escríbeme y conversemos.
           </p>
 
-          {/* Card */}
-          <div className="
-            mt-10
-            rounded-2xl
-            border border-white/10
-            bg-linear-to-b from-white/5 to-white/2
-            p-8
-            space-y-6
-          ">
+          {/* Cards */}
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-            <div className="flex justify-between items-center">
-              <span className="text-muted-foreground text-sm">
-                Nombre
-              </span>
-              <span className="font-medium">
-                Matías Vallejos Hidalgo
-              </span>
+            {/* Name */}
+            <div className="
+              flex items-center gap-4
+              rounded-2xl
+              bg-white/4
+              border border-white/10
+              p-6
+              backdrop-blur-md
+            ">
+              <FiUser className="text-primary w-6 h-6" />
+              <div className="text-left">
+                <p className="text-sm text-muted-foreground">Nombre</p>
+                <p className="font-medium">Matías Vallejos Hidalgo</p>
+              </div>
             </div>
 
-            <div className="flex justify-between items-center">
-              <span className="text-muted-foreground text-sm">
-                Email
-              </span>
-              <a
-                href="mailto:maatiasf97@gmail.com"
-                className="text-primary hover:underline"
-              >
-                maatiasf97@gmail.com
-              </a>
-            </div>
+            {/* Email */}
+            <a
+              href="mailto:maatiasf97@gmail.com"
+              className="
+                flex items-center gap-4
+                rounded-2xl
+                bg-white/4
+                border border-white/10
+                p-6
+                backdrop-blur-md
+                hover:border-white/20
+                transition
+              "
+            >
+              <FiMail className="text-primary w-6 h-6" />
+              <div className="text-left">
+                <p className="text-sm text-muted-foreground">Email</p>
+                <p className="font-medium">maatiasf97@gmail.com</p>
+              </div>
+            </a>
 
-            <div className="flex justify-between items-center">
-              <span className="text-muted-foreground text-sm">
-                GitHub
-              </span>
-              <a
-                href="https://github.com/shadowyera"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                github.com/shadowyera
-              </a>
-            </div>
+            {/* GitHub */}
+            <a
+              href="https://github.com/shadowyera"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                flex items-center gap-4
+                rounded-2xl
+                bg-white/4
+                border border-white/10
+                p-6
+                backdrop-blur-md
+                hover:border-white/20
+                transition
+              "
+            >
+              <FiGithub className="text-primary w-6 h-6" />
+              <div className="text-left">
+                <p className="text-sm text-muted-foreground">GitHub</p>
+                <p className="font-medium">github.com/shadowyera</p>
+              </div>
+            </a>
 
-            <div className="flex justify-between items-center">
-              <span className="text-muted-foreground text-sm">
-                LinkedIn
-              </span>
-              <a
-                href="https://linkedin.com/in/mfvallejos/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                linkedin.com/in/mfvallejos
-              </a>
-            </div>
+            {/* LinkedIn */}
+            <a
+              href="https://linkedin.com/in/mfvallejos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                flex items-center gap-4
+                rounded-2xl
+                bg-white/4
+                border border-white/10
+                p-6
+                backdrop-blur-md
+                hover:border-white/20
+                transition
+              "
+            >
+              <FiLinkedin className="text-primary w-6 h-6" />
+              <div className="text-left">
+                <p className="text-sm text-muted-foreground">LinkedIn</p>
+                <p className="font-medium">linkedin.com/in/mfvallejos</p>
+              </div>
+            </a>
 
           </div>
-
-          <p className="mt-8 text-sm text-muted-foreground">
-            Actualmente abierto a nuevas oportunidades en desarrollo
-            frontend, backend o full stack.
-          </p>
 
         </motion.div>
 

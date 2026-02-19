@@ -52,23 +52,28 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-32">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="skills" className="relative py-32 overflow-hidden">
+
+      {/* Background glow */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-primary/5 blur-[160px]" />
+
+      <div className="relative max-w-6xl mx-auto px-6">
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mb-20 text-center"
         >
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-4xl md:text-5xl font-bold">
             Stack & Tecnologías
           </h2>
 
-          <div className="mt-3 h-px w-24 bg-primary/40" />
+          <div className="mx-auto mt-4 h-0.5 w-24 bg-primary/40 rounded-full" />
 
-          <p className="mt-6 text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
             Tecnologías y herramientas que utilizo actualmente para
             construir aplicaciones web modernas, escalables y orientadas
             a negocio.
@@ -76,26 +81,36 @@ export default function Skills() {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-          {skills.map((group) => (
+          {skills.map((group, index) => (
             <motion.div
               key={group.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.7,
+                ease: "easeOut",
+                delay: index * 0.05,
+              }}
               className="
+                group
                 rounded-2xl
+                bg-white/4
                 border border-white/10
-                bg-white/5
                 p-8
+                backdrop-blur-md
+                transition
+                hover:border-white/20
+                hover:bg-white/6
               "
             >
-              <h3 className="text-base font-semibold mb-6">
+              <h3 className="text-base font-semibold mb-6 tracking-wide">
                 {group.title}
               </h3>
 
-              <ul className="grid grid-cols-2 gap-3">
+              <ul className="grid grid-cols-2 gap-4">
                 {group.items.map((item) => {
                   const Icon = item.icon
 
@@ -103,16 +118,18 @@ export default function Skills() {
                     <li
                       key={item.name}
                       className="
-                        flex items-center gap-2
+                        flex items-center gap-3
                         px-3
-                        h-9
+                        h-10
                         rounded-lg
                         bg-white/5
                         text-sm text-muted-foreground
-                        overflow-hidden
+                        transition
+                        hover:bg-white/10
+                        hover:text-foreground
                       "
                     >
-                      <Icon className="w-4 h-4 shrink-0" />
+                      <Icon className="w-4 h-4 shrink-0 text-primary" />
 
                       <span className="truncate">
                         {item.name}

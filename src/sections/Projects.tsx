@@ -41,71 +41,78 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-32">
-      {/* Soft background depth */}
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-125 h-125 rounded-full bg-primary/5 blur-[140px]" />
+    <section id="projects" className="relative py-32 overflow-hidden">
+
+      {/* Background glow */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-primary/5 blur-[160px]" />
 
       <div className="relative max-w-6xl mx-auto px-6">
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mb-20 text-center"
         >
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-4xl md:text-5xl font-bold">
             Proyectos
           </h2>
 
-          <div className="mt-3 h-px w-24 bg-primary/40" />
+          <div className="mx-auto mt-4 h-0.5 w-24 bg-primary/40 rounded-full" />
 
-          <p className="mt-6 text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
             Proyectos donde aplico arquitectura, buenas prácticas y
             soluciones orientadas a problemas reales.
           </p>
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <motion.article
               key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.05 }}
               className="
+                group
                 rounded-2xl
+                bg-white/4
                 border border-white/10
-                bg-white/5
                 p-8
+                backdrop-blur-md
                 transition
-                hover:bg-white/10
                 hover:border-white/20
+                hover:bg-white/[0.07]
               "
             >
 
               {/* Header */}
-              <div className="flex items-start justify-between gap-4 mb-4">
+              <div className="flex items-start justify-between gap-4 mb-5">
+
                 <h3 className="text-xl font-semibold">
                   {project.title}
                 </h3>
 
                 {project.status === "production" && (
-                  <span className="shrink-0 text-xs px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-400">
+                  <span className="shrink-0 text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400">
                     En producción
                   </span>
                 )}
+
               </div>
 
               {/* Description */}
-              <p className="text-muted-foreground mb-5 leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed">
                 {project.description}
               </p>
 
               {/* Highlights */}
-              <ul className="mb-6 space-y-1 text-sm text-muted-foreground">
+              <ul className="mb-6 space-y-2 text-sm text-muted-foreground">
                 {project.highlights.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="text-primary">•</span>
@@ -135,7 +142,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-                      px-4 py-2 rounded-lg
+                      px-5 py-2.5 rounded-xl
                       bg-primary text-primary-foreground
                       text-sm font-medium
                       hover:opacity-90
@@ -152,7 +159,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-                      px-4 py-2 rounded-lg
+                      px-5 py-2.5 rounded-xl
                       border border-white/10
                       text-sm
                       hover:bg-white/10
