@@ -8,13 +8,20 @@ import { useTheme } from "../shared/hooks/useTheme"
 export default function Header() {
   const { theme, toggleTheme } = useTheme()
 
+  const logoSrc =
+    theme === "dark"
+      ? "/logo-light.png"
+      : "/logo-dark.png"
+
   return (
-    <header className="
-      sticky top-0 z-50
-      backdrop-blur
-      bg-background/80
-      border-b border-white/10
-    ">
+    <header
+      className="
+        sticky top-0 z-50
+        backdrop-blur
+        bg-[hsl(var(--background))/0.85]
+        border-b border-[hsl(var(--border))]
+      "
+    >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
@@ -23,7 +30,7 @@ export default function Header() {
           className="flex items-center gap-3 group"
         >
           <img
-            src="/logo.png"
+            src={logoSrc}
             alt="Shadow logo"
             className="
               w-12 h-12 object-contain
@@ -34,7 +41,8 @@ export default function Header() {
 
           <span
             className="
-              font-bold text-lg tracking-tight text-primary
+              font-bold text-lg tracking-tight
+              text-primary
               transition-colors
               group-hover:text-primary/80
             "
@@ -46,53 +54,25 @@ export default function Header() {
         {/* Navigation */}
         <nav className="flex items-center gap-8">
 
-          <a
-            href="#about"
-            className="
-              text-sm
-              text-muted-foreground
-              hover:text-foreground
-              transition-colors
-            "
-          >
-            Sobre mí
-          </a>
-
-          <a
-            href="#projects"
-            className="
-              text-sm
-              text-muted-foreground
-              hover:text-foreground
-              transition-colors
-            "
-          >
-            Proyectos
-          </a>
-
-          <a
-            href="#skills"
-            className="
-              text-sm
-              text-muted-foreground
-              hover:text-foreground
-              transition-colors
-            "
-          >
-            Skills
-          </a>
-
-          <a
-            href="#contact"
-            className="
-              text-sm
-              text-muted-foreground
-              hover:text-foreground
-              transition-colors
-            "
-          >
-            Contacto
-          </a>
+          {[
+            ["#about", "Sobre mí"],
+            ["#projects", "Proyectos"],
+            ["#skills", "Skills"],
+            ["#contact", "Contacto"],
+          ].map(([href, label]) => (
+            <a
+              key={href}
+              href={href}
+              className="
+                text-sm
+                text-muted-foreground
+                hover:text-foreground
+                transition-colors
+              "
+            >
+              {label}
+            </a>
+          ))}
 
           {/* Theme toggle */}
           <button
@@ -103,8 +83,9 @@ export default function Header() {
               w-9 h-9
               flex items-center justify-center
               rounded-lg
-              border border-white/10
-              hover:bg-white/10
+              border border-[hsl(var(--border))]
+              text-foreground
+              hover:bg-[hsl(var(--card))]
               transition
             "
           >

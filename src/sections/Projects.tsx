@@ -81,13 +81,13 @@ export default function Projects() {
               className="
                 group
                 rounded-2xl
-                bg-white/4
-                border border-white/10
+                bg-[hsl(var(--card))]
+                border border-[hsl(var(--border))]
                 p-8
                 backdrop-blur-md
                 transition
-                hover:border-white/20
-                hover:bg-white/[0.07]
+                hover:border-primary/40
+                hover:shadow-[0_0_0_1px_rgba(59,130,246,0.25),0_20px_60px_rgba(59,130,246,0.15)]
               "
             >
 
@@ -126,7 +126,11 @@ export default function Projects() {
                 {project.stack.map((tech) => (
                   <li
                     key={tech}
-                    className="text-xs px-3 py-1 rounded-full bg-white/10"
+                    className="
+                      text-xs px-3 py-1 rounded-full
+                      bg-[hsl(var(--card))]
+                      border border-[hsl(var(--border))]
+                    "
                   >
                     {tech}
                   </li>
@@ -160,9 +164,10 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="
                       px-5 py-2.5 rounded-xl
-                      border border-white/10
+                      border border-[hsl(var(--border))]
                       text-sm
-                      hover:bg-white/10
+                      text-foreground
+                      hover:bg-[hsl(var(--card))]
                       transition
                     "
                   >

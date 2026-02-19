@@ -1,21 +1,33 @@
 @import "tailwindcss";
 
 /* ================================
-   Tokens base
+   TOKENS
 ================================ */
 
 :root {
-  --background: 0 0% 100%;
+  /* Base */
+  --background: 220 25% 97%;
   --foreground: 222 47% 11%;
+
+  /* Surfaces */
+  --card: 0 0% 100%;
+  --border: 220 20% 90%;
+
+  /* Accent */
+  --primary: 217 91% 60%;
 }
 
 .dark {
   --background: 222 47% 5%;
   --foreground: 210 40% 98%;
+
+  --card: 222 47% 8%;
+  --border: 222 30% 18%;
+  --primary: 217 91% 60%;
 }
 
 /* ================================
-   Base
+   BASE
 ================================ */
 
 html,
@@ -23,12 +35,38 @@ body {
   min-height: 100%;
 }
 
-/* Fondo con profundidad sutil */
+/* ================================
+   BACKGROUND
+================================ */
+
+/* 🌤 Light theme */
 body {
   background:
     radial-gradient(
+      1000px 500px at 15% -10%,
+      rgba(59,130,246,0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      900px 450px at 90% 10%,
+      rgba(99,102,241,0.08),
+      transparent 40%
+    ),
+    linear-gradient(
+      to bottom,
+      #f8fafc,
+      #eef2ff
+    );
+
+  color: hsl(var(--foreground));
+}
+
+/* 🌑 Dark theme */
+.dark body {
+  background:
+    radial-gradient(
       1200px 600px at 20% -10%,
-      rgba(59,130,246,0.08),
+      rgba(59,130,246,0.10),
       transparent 40%
     ),
     radial-gradient(
@@ -37,6 +75,37 @@ body {
       transparent 40%
     ),
     hsl(var(--background));
-
-  color: hsl(var(--foreground));
 }
+
+/* ================================
+   REUSABLE UTILITIES
+================================ */
+
+/* Glass light card */
+.light-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+/* Glass dark card */
+.dark-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+/* Soft glow (light) */
+.glow-light {
+  box-shadow:
+    0 0 0 1px rgba(59,130,246,0.15),
+    0 10px 30px rgba(59,130,246,0.15);
+}
+
+/* Soft glow (dark) */
+.glow-dark {
+  box-shadow:
+    0 0 0 1px rgba(59,130,246,0.25),
+    0 20px 60px rgba(59,130,246,0.25);
+}
+

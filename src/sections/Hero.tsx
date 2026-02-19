@@ -29,12 +29,12 @@ const Hero: FC = () => {
         relative overflow-hidden
         min-h-[90vh]
         flex items-center
-        bg-background
       "
     >
       {/* Soft background gradients */}
       <div className="pointer-events-none absolute -top-40 -left-40 w-125 h-125 rounded-full bg-primary/10 blur-[120px]" />
       <div className="pointer-events-none absolute top-1/3 -right-40 w-100 h-100 rounded-full bg-primary/5 blur-[120px]" />
+
       <motion.div
         variants={heroVariants}
         initial="hidden"
@@ -91,8 +91,9 @@ const Hero: FC = () => {
             aria-label="Ir a contacto"
             className="
               px-6 py-3 rounded-xl
-              border border-white/10
-              hover:bg-white/10
+              border border-[hsl(var(--border))]
+              text-foreground
+              hover:bg-[hsl(var(--card))]
               transition
             "
           >

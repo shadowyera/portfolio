@@ -97,13 +97,13 @@ export default function Skills() {
               className="
                 group
                 rounded-2xl
-                bg-white/4
-                border border-white/10
+                bg-[hsl(var(--card))]
+                border border-[hsl(var(--border))]
                 p-8
                 backdrop-blur-md
                 transition
-                hover:border-white/20
-                hover:bg-white/6
+                hover:border-primary/40
+                hover:shadow-[0_0_0_1px_rgba(59,130,246,0.25),0_20px_60px_rgba(59,130,246,0.15)]
               "
             >
               <h3 className="text-base font-semibold mb-6 tracking-wide">
@@ -122,10 +122,11 @@ export default function Skills() {
                         px-3
                         h-10
                         rounded-lg
-                        bg-white/5
+                        bg-[hsl(var(--card))]
+                        border border-[hsl(var(--border))]
                         text-sm text-muted-foreground
                         transition
-                        hover:bg-white/10
+                        hover:bg-primary/5
                         hover:text-foreground
                       "
                     >

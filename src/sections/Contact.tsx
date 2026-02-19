@@ -34,14 +34,16 @@ export default function Contact() {
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-6">
 
             {/* Name */}
-            <div className="
-              flex items-center gap-4
-              rounded-2xl
-              bg-white/4
-              border border-white/10
-              p-6
-              backdrop-blur-md
-            ">
+            <div
+              className="
+                flex items-center gap-4
+                rounded-2xl
+                bg-[hsl(var(--card))]
+                border border-[hsl(var(--border))]
+                p-6
+                backdrop-blur-md
+              "
+            >
               <FiUser className="text-primary w-6 h-6" />
               <div className="text-left">
                 <p className="text-sm text-muted-foreground">Nombre</p>
@@ -55,12 +57,13 @@ export default function Contact() {
               className="
                 flex items-center gap-4
                 rounded-2xl
-                bg-white/4
-                border border-white/10
+                bg-[hsl(var(--card))]
+                border border-[hsl(var(--border))]
                 p-6
                 backdrop-blur-md
-                hover:border-white/20
                 transition
+                hover:border-primary/40
+                hover:shadow-[0_0_0_1px_rgba(59,130,246,0.25),0_20px_60px_rgba(59,130,246,0.15)]
               "
             >
               <FiMail className="text-primary w-6 h-6" />
@@ -78,12 +81,13 @@ export default function Contact() {
               className="
                 flex items-center gap-4
                 rounded-2xl
-                bg-white/4
-                border border-white/10
+                bg-[hsl(var(--card))]
+                border border-[hsl(var(--border))]
                 p-6
                 backdrop-blur-md
-                hover:border-white/20
                 transition
+                hover:border-primary/40
+                hover:shadow-[0_0_0_1px_rgba(59,130,246,0.25),0_20px_60px_rgba(59,130,246,0.15)]
               "
             >
               <FiGithub className="text-primary w-6 h-6" />
@@ -101,12 +105,13 @@ export default function Contact() {
               className="
                 flex items-center gap-4
                 rounded-2xl
-                bg-white/4
-                border border-white/10
+                bg-[hsl(var(--card))]
+                border border-[hsl(var(--border))]
                 p-6
                 backdrop-blur-md
-                hover:border-white/20
                 transition
+                hover:border-primary/40
+                hover:shadow-[0_0_0_1px_rgba(59,130,246,0.25),0_20px_60px_rgba(59,130,246,0.15)]
               "
             >
               <FiLinkedin className="text-primary w-6 h-6" />

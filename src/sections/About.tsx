@@ -35,10 +35,13 @@ export default function About() {
             className="
               mt-10
               rounded-2xl
-              bg-white/4
-              border border-white/10
+              bg-[hsl(var(--card))]
+              border border-[hsl(var(--border))]
               p-7 md:p-8
               backdrop-blur-md
+              transition
+              hover:border-primary/40
+              hover:shadow-[0_0_0_1px_rgba(59,130,246,0.25),0_20px_60px_rgba(59,130,246,0.15)]
             "
           >
             <div className="space-y-6 text-left">
