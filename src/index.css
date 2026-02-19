@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* ================================
+   Tokens base
+================================ */
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+}
+
+.dark {
+  --background: 222 47% 5%;
+  --foreground: 210 40% 98%;
+}
+
+/* ================================
+   Base
+================================ */
+
+html,
+body {
+  min-height: 100%;
+}
+
+/* Fondo con profundidad sutil */
+body {
+  background:
+    radial-gradient(
+      1200px 600px at 20% -10%,
+      rgba(59,130,246,0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      1000px 500px at 90% 10%,
+      rgba(59,130,246,0.05),
+      transparent 40%
+    ),
+    hsl(var(--background));
+
+  color: hsl(var(--foreground));
+}
