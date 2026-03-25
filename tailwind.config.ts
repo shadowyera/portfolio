@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss"
 
 const config: Config = {
-  darkMode: "class", // usamos clase .dark en el <html>
+  darkMode: "class",
 
   content: [
     "./index.html",
@@ -9,47 +9,84 @@ const config: Config = {
   ],
 
   theme: {
-    extend: {
-      /*
-        🎨 Design tokens base.
-        No usamos colores hardcodeados en componentes.
-        Creamos una base escalable tipo design system.
-      */
-      colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
 
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-
-      /*
-        🧱 Border radius consistente
-      */
-      borderRadius: {
-        xl: "1rem",
-        "2xl": "1.5rem",
-      },
-
-      /*
-        ✨ Animaciones suaves (para después usar con Framer o transiciones)
-      */
-      transitionTimingFunction: {
-        "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+    container: {
+      center: true,
+      padding: "1rem",
+      screens: {
+        "2xl": "1280px",
       },
     },
+
+    extend: {
+
+      /* =========================
+         COLORS (HSL TOKENS)
+      ========================= */
+
+      colors: {
+
+        background: "hsl(var(--background) / <alpha-value>)",
+        surface: "hsl(var(--surface) / <alpha-value>)",
+        surfaceSoft: "hsl(var(--surface-soft) / <alpha-value>)",
+
+        text: "hsl(var(--text) / <alpha-value>)",
+        muted: "hsl(var(--text-muted) / <alpha-value>)",
+
+        border: "hsl(var(--border) / <alpha-value>)",
+
+        accent: "hsl(var(--accent) / <alpha-value>)",
+        accentSoft: "hsl(var(--accent-soft) / <alpha-value>)",
+
+        focus: "hsl(var(--focus-ring) / <alpha-value>)",
+      },
+
+      /* =========================
+         RADIUS
+      ========================= */
+
+      borderRadius: {
+        sm: "var(--radius-sm)",
+        md: "var(--radius-md)",
+        lg: "var(--radius-lg)",
+        xl: "var(--radius-xl)",
+      },
+
+      /* =========================
+         SHADOWS
+      ========================= */
+
+      boxShadow: {
+        sm: "var(--shadow-sm)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+        glow: "var(--shadow-glow)",
+      },
+
+      /* =========================
+         TYPOGRAPHY
+      ========================= */
+
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
+      },
+
+      /* =========================
+         TRANSITIONS
+      ========================= */
+
+      transitionTimingFunction: {
+        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+
+      transitionDuration: {
+        250: "250ms",
+        400: "400ms",
+      },
+
+    },
+
   },
 
   plugins: [],

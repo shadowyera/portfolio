@@ -47,7 +47,7 @@ const Hero: FC = () => {
       >
         {/* Greeting */}
         <span className="text-primary font-semibold tracking-wide">
-          👋 Hola, soy Shadow
+          👋 Hola, soy Matías Vallejos
         </span>
 
         {/* Subtle line */}
@@ -56,18 +56,25 @@ const Hero: FC = () => {
         {/* Title */}
         <h1 className="mt-6 text-5xl md:text-6xl font-bold leading-tight tracking-tight">
           <span className="block text-foreground">
-            Ingeniero en Informática
+            Full Stack Developer
           </span>
 
           <span className="block text-primary drop-shadow-[0_0_20px_rgba(59,130,246,0.25)]">
-            Full Stack Developer
+            React · Node.js · Arquitectura Escalable
           </span>
         </h1>
 
         {/* Description */}
         <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-          Desarrollo aplicaciones web modernas, escalables y con foco en
-          arquitectura, rendimiento y experiencia de usuario.
+          Construyo aplicaciones web full stack enfocadas en rendimiento,
+          arquitectura clara y uso en entornos reales. He desarrollado sistemas
+          en producción con sincronización en tiempo real, autenticación segura
+          y estructuras mantenibles.
+        </p>
+
+        {/* Extra credibility line */}
+        <p className="mt-4 text-sm text-muted-foreground">
+          Actualmente desarrollando sistemas reales como POS y e-commerce en producción
         </p>
 
         {/* Actions */}
